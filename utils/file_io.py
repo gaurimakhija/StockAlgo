@@ -4,6 +4,7 @@ from pathlib import Path
 import openpyxl as excel
 
 class CSVFileHandler:
+    
     def __init__(self, filepath: Path):
         self.filepath = Path(filepath).resolve()
 
@@ -24,6 +25,7 @@ class CSVFileHandler:
 
 
 class JSONFileHandler:
+    
     def __init__(self, filepath: Path):
         self.filepath = Path(filepath).resolve()
 
@@ -39,6 +41,7 @@ class JSONFileHandler:
 
 
 class ExcelFileHandler:
+    
     def __init__(self, filepath: Path):
         self.filepath = Path(filepath).resolve()
 
@@ -65,6 +68,5 @@ class ExcelFileHandler:
             ws = wb.create_sheet(sheet) if len(data) > 1 else default_sheet
             for row in rows:
                 ws.append(row)
-        
         wb.save(self.filepath)
     
